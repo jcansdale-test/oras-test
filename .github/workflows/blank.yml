@@ -1,0 +1,16 @@
+
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: curl -LO https://github.com/oras-project/oras/releases/download/v0.12.0/oras_0.12.0_linux_amd64.tar.gz
+      - run: mkdir -p oras-install/      
+      - run: tar -zxf oras_0.12.0_*.tar.gz -C oras-install/
+      - run: oras-install/oras
