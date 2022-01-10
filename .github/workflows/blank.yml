@@ -15,6 +15,6 @@ jobs:
       - run: oras-install/oras login ghcr.io -u token -p ${{ github.token }}
       - run: echo "Here is an artifact" > artifact.txt
       - run: |
-          oras-install/oras push ghcr.io/${{ github.repository }}
-          --manifest-config /dev/null:application/vnd.unknown.config.v1+json
+          oras-install/oras push ghcr.io/${{ github.repository }} /
+          --manifest-config /dev/null:application/vnd.unknown.config.v1+json /
           ./artifact.txt:application/vnd.unknown.layer.v1+txt
