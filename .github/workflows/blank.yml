@@ -13,4 +13,4 @@ jobs:
       - run: mkdir -p oras-install/      
       - run: tar -zxf oras_0.12.0_*.tar.gz -C oras-install/
       - run: oras-install/oras login ghcr.io -u token -p ${{ github.token }}
-      - run: oras-install/oras pull ghcr.io/jcansdale/gpr:latest
+      - run: oras-install/oras pull -a ghcr.io/jcansdale/gpr:latest
