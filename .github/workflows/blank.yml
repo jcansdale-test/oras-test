@@ -14,3 +14,4 @@ jobs:
       - run: tar -zxf oras_0.12.0_*.tar.gz -C oras-install/
       - run: oras-install/oras login ghcr.io -u token -p ${{ github.token }}
       - run: oras-install/oras pull -a ghcr.io/pakages/linux-ubuntu22.04-x86_64-gcc-11.2.0-zlib-1.2.11.spack:latest
+      - run: oras-install/oras push ghcr.io/${{ github.repository }} --manifest-config /dev/null:application/vnd.unknown.config.v1+json linux-ubuntu22.04-x86_64-gcc-11.2.0-zlib-1.2.11-4li37ifpa5bykdu2j237dj32ukwjpwyr.spack:application/vnd.spack.package
